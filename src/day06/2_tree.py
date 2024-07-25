@@ -68,15 +68,15 @@ def preorder( node ) :
     # 3-5 중위 순회 함수 :  left -> root -> right
 def inorder( node ) :
     if node == None : return
-    preorder(node.left)  # 왼쪽노드 확인
+    inorder(node.left)  # 왼쪽노드 확인
     print( node.data , end ='\t')
-    preorder( node.right )  # 오른쪽노드 확인
+    inorder( node.right )  # 오른쪽노드 확인
 
     # 3-6 후위 순회 함수 : left -> right -> root
 def postorder( node ) :
     if node == None : return
-    preorder(node.left)  # 왼쪽노드 확인
-    preorder( node.right )  # 오른쪽노드 확인
+    postorder(node.left)  # 왼쪽노드 확인
+    postorder( node.right )  # 오른쪽노드 확인
     print( node.data , end ='\t')
 
 preorder( rootNode )        # 전위 순회
